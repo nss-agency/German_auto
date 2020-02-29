@@ -42,8 +42,8 @@
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-6 text-center">
-                        <h1>Make your offer here</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <h1>Калькулятор Розмитнення</h1>
+                        <p>Тут ви можете розрахувати наближену вартість розмитнення вашого авто</p>
                     </div>
                 </div>
             </div>
@@ -53,24 +53,25 @@
         <div class="row">
             <div class="col-lg-8 mb-5">
 
-                <label for="gas_type">Gas Type</label>
+                <label for="gas_type">Тип Палива</label>
                 <select class="form-control" oninput=Calculate() name="gas_type" id="gas_type">
-                    <option value="0" selected>Benzin</option>
-                    <option value="1">Diesel</option>
+                    <option value="0" selected>Бензин</option>
+                    <option value="1">Дизель</option>
                 </select>
                 <br>
-                <label for="motor_volume">Volume</label>
+                <label for="motor_volume">Об'єм</label>
                 <input class="form-control" oninput=Calculate() type="number" name="motor_volume" id="motor_volume">
                 <br>
-                <label for="year">Year</label>
+                <label for="year">Рік випуску</label>
                 <select class="form-control" oninput=Calculate() name="year" id="year">
 
                 </select>
                 <br>
-                <label for="auto_price">Price</label>
+                <label for="auto_price">Ціна</label>
+                <h6 class="text-muted font-size-12">Ціну вказуйте в €</h6>
                 <input class="form-control" oninput=Calculate() type="text" id="auto_price" name="auto_price">
                 <br>
-                <h3>Result:</h3>
+                <h4>Результат:</h4>
                 <input class="form-control" type="number" id="result">
             </div>
 
