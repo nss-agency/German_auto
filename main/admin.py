@@ -1,5 +1,25 @@
 from django.contrib import admin
 from .models import *
+
+
 # Register your models here.
 
-admin.site.register(Car)
+class PhotoInline(admin.StackedInline):
+    model = Photo
+    extra = 1
+
+
+class CarAdmin(admin.ModelAdmin):
+    list_display = ['title', 'category']
+    search_fields = ['category']
+    inlines = [PhotoInline]
+
+    def save_model(self, request, obj, form, change):
+        obj.save()
+
+        for afile in request.FILES.getlist('photos_multiple'):
+            obj.photos.create(image=afile)
+
+
+admin.site.register(Car, CarAdmin)
+admin.site.register(Faq)
