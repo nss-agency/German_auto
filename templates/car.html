@@ -7,11 +7,13 @@
 <body>
 {% for car in cars %}
     <h1>{{ car.title }}</h1>
+    <h1 style="color: red;">{{ car.price }}  ЕВРИКІВ</h1>
     <h2>{{ car.state }}</h2>
     <h2>{{ car.first_register }}</h2>
     <h2>{{ car.transmision }}</h2>
     <h2>{{ car.mileage }}</h2>
     <h2>{{ car.power }}</h2>
+    <h2>{{ car.gas_type }}</h2>
     <h2>{{ car.value }}</h2>
     <h2>{{ car.color }}</h2>
     <h2>{{ car.salon }}</h2>

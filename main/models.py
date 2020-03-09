@@ -6,13 +6,17 @@ from django.db import models
 
 class Car(models.Model):
     title = models.TextField('Назва', max_length=500)
+    price = models.IntegerField('Ціна')
     state = models.CharField('Стан', max_length=225,
                              choices=(('Нова', 'Нова'), ('Підтримана (Б/У)', 'Підтримана (Б/У)')))
     first_register = models.IntegerField('Перша реєстрація')
     transmision = models.CharField('Коробка передач', max_length=225,
-                                   choices=(('Автомат', 'Автомат'), ('Механіка', 'Механіка'), ('Роботична', 'Роботична')))
+                                   choices=(
+                                   ('Автомат', 'Автомат'), ('Механіка', 'Механіка'), ('Роботична', 'Роботична')))
     mileage = models.IntegerField('Пробіг')
     power = models.IntegerField('Потужність')
+    gas_type = models.CharField('Тип палива', max_length=225, choices=(
+    ('Бензин', 'Бензин'), ('Дизель', 'Дизель'), ('Електрика', 'Електрика'), ('Бензин/Газ', 'Бензин/Газ')))
     value = models.IntegerField('Об\'єм')
     color = models.CharField('Колір', max_length=225)
     salon = models.CharField('Салон', max_length=225, choices=(

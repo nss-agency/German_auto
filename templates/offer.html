@@ -60,6 +60,7 @@
                 </select>
                 <br>
                 <label for="motor_volume">Об'єм</label>
+                <h6 class="text-muted font-size-12">Об'єм вказуйте в м<sup>3</sup></h6>
                 <input class="form-control" oninput=Calculate() type="number" name="motor_volume" id="motor_volume">
                 <br>
                 <label for="year">Рік випуску</label>
@@ -126,12 +127,12 @@
             }
         }
 
-        let date = new Date().getFullYear()
-        let step1 = gas_money * (motor_volume / 1000) * (date - year - 1) * 0.5
-        let step2 = auto_price + step1
-        let step3 = step2 * 1.1 * .2
-        let step4 = auto_price * .04
-        let step5 = step1 + (step2 * .1) + step3 + step4
+        let date = new Date().getFullYear();
+        let step1 = gas_money * (motor_volume / 1000) * (date - year) * 0.5;
+        let step2 = auto_price + step1;
+        let step3 = step2 * 1.1 * .2;
+        let step4 = auto_price * .04;
+        let step5 = step1 + (step2 * .1) + step3 + step4;
 
         document.getElementById('result').value = Math.round(step5)
     }
