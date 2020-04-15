@@ -127,12 +127,21 @@
             }
         }
 
+<<<<<<< HEAD
         let date = new Date().getFullYear();
         let step1 = gas_money * (motor_volume / 1000) * (date - year) * 0.5;
         let step2 = auto_price + step1;
         let step3 = step2 * 1.1 * .2;
         let step4 = auto_price * .04;
         let step5 = step1 + (step2 * .1) + step3 + step4;
+=======
+        let date = new Date().getFullYear()
+        let step1 = gas_money * (motor_volume / 1000) * (date - year) * 0.5
+        let step2 = auto_price + step1
+        let step3 = step2 * 1.1 * .2
+        let step4 = auto_price * .04
+        let step5 = step1 + (step2 * .1) + step3 + step4
+>>>>>>> 666d394397422fd9a58252c098c2ce24c0fa7fce
 
         document.getElementById('result').value = Math.round(step5)
     }

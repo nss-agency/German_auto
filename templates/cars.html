@@ -45,7 +45,7 @@
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-6 text-center">
-                        <h1 class="text-transparent-gradient font-weight-bold">Our For Rent Cars</h1>
+                        <h1 class="text-transparent-gradient font-weight-bold">В Наявності</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
@@ -56,255 +56,45 @@
     <div class="site-section bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="item-1">
-                        <a href="#"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="item-1-contents">
-                            <div class="text-center">
-                                <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                                <div class="rating">
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
+                {% for car in all_cars %}
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="item-1">
+
+                            <a href="#"><img src="{{ car.image.url }}" alt="{{ car.title }}" class="img-fluid"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">{{ car.title }}</a></h3>
+                                    <div class="rent-price"><span>{{ car.price }} €</span></div>
                                 </div>
-                                <div class="rent-price"><span>$250/</span>day</div>
-                            </div>
-                            <ul class="specs">
-                                <li>
-                                    <span>Doors</span>
-                                    <span class="spec">4</span>
-                                </li>
-                                <li>
-                                    <span>Seats</span>
-                                    <span class="spec">5</span>
-                                </li>
-                                <li>
-                                    <span>Transmission</span>
-                                    <span class="spec">Automatic</span>
-                                </li>
-                                <li>
-                                    <span>Minium age</span>
-                                    <span class="spec">18 years</span>
-                                </li>
-                            </ul>
-                            <div class="d-flex action">
-                                <a href="contact.html" class="btn btn-primary">Детальніше</a>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Перша реєстрація</span>
+                                        <span class="spec">{{ car.first_register }}</span>
+                                    </li>
+                                    <li>
+                                        <span>Пробіг</span>
+                                        <span class="spec">{{ car.mileage }} км</span>
+                                    </li>
+                                    <li>
+                                        <span>Тип Палива</span>
+                                        <span class="spec">{{ car.patrol }}</span>
+                                    </li>
+                                    <li>
+                                        <span>Коробка передач</span>
+                                        <span class="spec">{{ car.transmision }}</span>
+                                    </li>
+                                    <li>
+                                        <span>Категорія</span>
+                                        <span class="spec">{{ car.category }}</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Детальніше</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="item-1">
-                        <a href="#"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="item-1-contents">
-                            <div class="text-center">
-                                <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                                <div class="rating">
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                </div>
-                                <div class="rent-price"><span>$250/</span>day</div>
-                            </div>
-                            <ul class="specs">
-                                <li>
-                                    <span>Doors</span>
-                                    <span class="spec">4</span>
-                                </li>
-                                <li>
-                                    <span>Seats</span>
-                                    <span class="spec">5</span>
-                                </li>
-                                <li>
-                                    <span>Transmission</span>
-                                    <span class="spec">Automatic</span>
-                                </li>
-                                <li>
-                                    <span>Minium age</span>
-                                    <span class="spec">18 years</span>
-                                </li>
-                            </ul>
-                            <div class="d-flex action">
-                                <a href="contact.html" class="btn btn-primary">Rent Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="item-1">
-                        <a href="#"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="item-1-contents">
-                            <div class="text-center">
-                                <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                                <div class="rating">
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                </div>
-                                <div class="rent-price"><span>$250/</span>day</div>
-                            </div>
-                            <ul class="specs">
-                                <li>
-                                    <span>Doors</span>
-                                    <span class="spec">4</span>
-                                </li>
-                                <li>
-                                    <span>Seats</span>
-                                    <span class="spec">5</span>
-                                </li>
-                                <li>
-                                    <span>Transmission</span>
-                                    <span class="spec">Automatic</span>
-                                </li>
-                                <li>
-                                    <span>Minium age</span>
-                                    <span class="spec">18 years</span>
-                                </li>
-                            </ul>
-                            <div class="d-flex action">
-                                <a href="contact.html" class="btn btn-primary">Rent Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="item-1">
-                        <a href="#"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="item-1-contents">
-                            <div class="text-center">
-                                <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                                <div class="rating">
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                </div>
-                                <div class="rent-price"><span>$250/</span>day</div>
-                            </div>
-                            <ul class="specs">
-                                <li>
-                                    <span>Doors</span>
-                                    <span class="spec">4</span>
-                                </li>
-                                <li>
-                                    <span>Seats</span>
-                                    <span class="spec">5</span>
-                                </li>
-                                <li>
-                                    <span>Transmission</span>
-                                    <span class="spec">Automatic</span>
-                                </li>
-                                <li>
-                                    <span>Minium age</span>
-                                    <span class="spec">18 years</span>
-                                </li>
-                            </ul>
-                            <div class="d-flex action">
-                                <a href="contact.html" class="btn btn-primary">Rent Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="item-1">
-                        <a href="#"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="item-1-contents">
-                            <div class="text-center">
-                                <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                                <div class="rating">
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                </div>
-                                <div class="rent-price"><span>$250/</span>day</div>
-                            </div>
-                            <ul class="specs">
-                                <li>
-                                    <span>Doors</span>
-                                    <span class="spec">4</span>
-                                </li>
-                                <li>
-                                    <span>Seats</span>
-                                    <span class="spec">5</span>
-                                </li>
-                                <li>
-                                    <span>Transmission</span>
-                                    <span class="spec">Automatic</span>
-                                </li>
-                                <li>
-                                    <span>Minium age</span>
-                                    <span class="spec">18 years</span>
-                                </li>
-                            </ul>
-                            <div class="d-flex action">
-                                <a href="contact.html" class="btn btn-primary">Rent Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="item-1">
-                        <a href="#"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="item-1-contents">
-                            <div class="text-center">
-                                <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                                <div class="rating">
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                    <span class="icon-star text-warning"></span>
-                                </div>
-                                <div class="rent-price"><span>$250/</span>day</div>
-                            </div>
-                            <ul class="specs">
-                                <li>
-                                    <span>Doors</span>
-                                    <span class="spec">4</span>
-                                </li>
-                                <li>
-                                    <span>Seats</span>
-                                    <span class="spec">5</span>
-                                </li>
-                                <li>
-                                    <span>Transmission</span>
-                                    <span class="spec">Automatic</span>
-                                </li>
-                                <li>
-                                    <span>Minium age</span>
-                                    <span class="spec">18 years</span>
-                                </li>
-                            </ul>
-                            <div class="d-flex action">
-                                <a href="contact.html" class="btn btn-primary">Rent Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-12">
-                    <span class="p-3">1</span>
-                    <a href="#" class="p-3">2</a>
-                    <a href="#" class="p-3">3</a>
-                    <a href="#" class="p-3">4</a>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

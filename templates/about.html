@@ -59,7 +59,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2">
-                    <img src="images/hero_2.jpg" alt="Image" class="img-fluid">
+                    <img src="{% static 'images/hero_6.JPG'%}" alt="Image" class="img-fluid">
                 </div>
                 <div class="col-lg-4 mr-auto">
                     <h2>German Auto</h2>
@@ -73,23 +73,36 @@
         </div>
     </div>
 
-    \
-    <div class="site-section">
+
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <img src="images/hero_1.jpg" alt="Image" class="img-fluid">
-                </div>
-                <div class="col-lg-4 ml-auto">
-                    <h2>Our History</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit suscipit, repudiandae similique
-                        accusantium eius nulla quam laudantium sequi.</p>
-                    <p>Debitis voluptates corporis saepe molestias tenetur ab quae, quo earum commodi, laborum dolore,
-                        fuga aliquid delectus cum ipsa?</p>
-                </div>
-            </div>
+             <div class="row justify-content-center text-center">
+        <div class="col-7 text-center mb-5">
+            <h2>Найчастіші питання</h2>
         </div>
     </div>
+            {% for f in faq %}
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="text-center mb-0">
+                                <button class=" btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    {{f.question}}
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                             data-parent="#accordionExample">
+                            <div class="card-body">
+                                {{ f.answer }}
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            {% endfor %}
+        </div>
+
 
     {% include 'steps.html' %}
 
@@ -110,7 +123,9 @@
 <script src="{% static 'js/aos.js' %}"></script>
 
 <script src="{% static 'js/main.js' %}"></script>
-
+<script>
+    $('.collapse').collapse()
+</script>
 </body>
 
 </html>
