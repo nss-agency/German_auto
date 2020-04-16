@@ -64,7 +64,7 @@
                             <div class="item-1-contents">
                                 <div class="text-center">
                                     <h3><a href="#">{{ car.title }}</a></h3>
-                                    <div class="rent-price"><span>{{ car.price }} €</span></div>
+                                    <div class="rent-price"><span>{{ car.price}} €</span></div>
                                 </div>
                                 <ul class="specs">
                                     <li>
@@ -89,7 +89,7 @@
                                     </li>
                                 </ul>
                                 <div class="d-flex action">
-                                    <a href="contact.html" class="btn btn-primary">Детальніше</a>
+                                    <a href="{% url "car_details" car.id %}" class="btn btn-primary">Детальніше</a>
                                 </div>
                             </div>
                         </div>

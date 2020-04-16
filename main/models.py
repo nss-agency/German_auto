@@ -51,7 +51,7 @@ class Car(models.Model):
     image = models.ImageField(upload_to='cars')
     state = models.CharField('Стан', max_length=225, choices=STATE_CHOICES)
     patrol = models.CharField('Тип Палива', max_length=225, choices=PATROL_CHOICES)
-    first_register = models.IntegerField('Перша реєстрація')
+    first_register = models.CharField('Перша реєстрація',max_length=10)
     transmision = models.CharField('Коробка передач', max_length=225, choices=TRANSMISION_CHOICES)
     mileage = models.IntegerField('Пробіг')
     power = models.IntegerField('Потужність')
@@ -64,7 +64,7 @@ class Car(models.Model):
     trace_flowrate = models.FloatField('Розхід по шосе')
     mixed_flowrate = models.FloatField('Змішаний розхід')
     detail = models.TextField('Детальніше')
-    price = models.IntegerField('Ціна')
+    price = models.DecimalField('Ціна', max_digits=10, decimal_places=0)
 
     hot = models.BooleanField('Гаряча Пропозиція',
                               default=False,
@@ -110,3 +110,4 @@ def submission_delete(sender, instance, **kwargs):
         instance.image.delete(False)
     except AttributeError:
         pass
+

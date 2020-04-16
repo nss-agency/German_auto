@@ -26,8 +26,7 @@ urlpatterns = [
     path('cars/', views.cars, name='cars'),
     path('contact/', views.contact, name='contact'),
     path('services/', views.services, name='services'),
-    path('car/', views.car, name='car'),
-    path('car_details/', views.car_details, name='car_details'),
+    path('car_details/<id>', views.car_details, name='car_details'),
     path('offer/', views.offer, name='offer'),
 
 ]

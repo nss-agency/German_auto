@@ -22,6 +22,9 @@
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/style_car.css' %}">
 </head>
 <body>
 <div class="site-wrap" id="home-section">
@@ -34,11 +37,101 @@
         </div>
         <div class="site-mobile-menu-body"></div>
     </div>
-
+</div>
 
 {% include 'nav.html' %}
 
-<img src="{% static 'images/hero_5.JPG' %}" alt="">
+<div class="ftco-blocks-cover-1">
+    <div class="ftco-cover-1 overlay innerpage" style="background-image: url('{% static 'images/hero_5.JPG' %}')">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h1 class=" font-weight-bold">Детальніше про : {{ cars.title }} </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <section class="ftco-section ftco-car-details">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="car-details">
+                        <div class="img rounded" style="background-image: url({{ cars.image.url }});"></div>
+                        <div class="text text-center">
+                            <span class="subheading">{{ cars.price }}</span>
+                            <h2>{{ cars.title }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 pills">
+                    <div class="bd-example bd-example-tabs">
+                        <div class="d-flex justify-content-center">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="pills-description-tab" data-toggle="pill"
+                                       href="#pills-description" role="tab" aria-controls="pills-description"
+                                       aria-expanded="true">Подробиці</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill"
+                                       href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer"
+                                       aria-expanded="true">Детальніше</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-description" role="tabpanel"
+                                 aria-labelledby="pills-description-tab">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <ul class="features">
+                                            <li class="check">Пробіг: <strong>{{ cars.mileage }} км</strong></li>
+                                            <li class="check">Стан: <strong>{{ cars.state }}</strong></li>
+                                            <li class="check">Перша Реєстрація:
+                                                <strong>{{ cars.first_register }}p.</strong></li>
+                                            <li class="check">Коробка Передач: <strong>{{ cars.transmision }}</strong>
+                                            </li>
+                                            <li class="check">Колір: <strong>{{ cars.color }}</strong></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="features">
+                                            <li class="check">Салон: <strong>{{ cars.salon }}</strong></li>
+                                            <li class="remove">Парктроніки: <strong>{{ cars.parktronick }}</strong></li>
+                                            <li class="check">Категорія: <strong>{{ cars.category }}</strong></li>
+                                            <li class="check">Тип Палива: <strong>{{ cars.patrol }}</strong></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="features">
+                                            <li class="check">Розхід по місту: <strong>{{ cars.sity_flowrate }}</strong></li>
+                                            <li class="check">Розхід по шосе: <strong>{{ cars.trace_flowrate }}</strong></li>
+                                            <li class="check">Змішаний розхід: <strong>{{ cars.mixed_flowrate }}</strong></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel"
+                                 aria-labelledby="pills-manufacturer-tab">
+                                {{ cars.detail }}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 {% include 'footer.html' %}
 <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 <script src="{% static 'js/popper.min.js' %}"></script>
@@ -54,5 +147,4 @@
 
 <script src="{% static 'js/main.js' %}"></script>
 </body>
-
 </html>
