@@ -60,11 +60,11 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="item-1">
 
-                            <a href="#"><img src="{{ car.image.url }}" alt="{{ car.title }}" class="img-fluid"></a>
+                            <a href="{% url "car_details" car.id %} "><img src="{{ car.image.url }}" alt="{{ car.title }}" class="img-fluid"></a>
                             <div class="item-1-contents">
                                 <div class="text-center">
-                                    <h3><a href="#">{{ car.title }}</a></h3>
-                                    <div class="rent-price"><span>{{ car.price}} €</span></div>
+                                    <h3><a href=" {% url "car_details" car.id %} ">{{ car.title }}</a></h3>
+                                    <div class="rent-price"><span>{{ car.price}} {{ car.currency }}</span></div>
                                 </div>
                                 <ul class="specs">
                                     <li>

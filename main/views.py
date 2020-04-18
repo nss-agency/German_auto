@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from main.models import Car, Faq
+from main.models import Car, Faq, Photo
 
 
 # Create your views here.
@@ -42,11 +42,9 @@ def offer(request):
 
 def car_details(request, id):
     cars_k = Car.objects.get(pk=id)
-    price = "{:,}".format(cars_k.price)
-    mileage = "{:,}".format(cars_k.mileage)
+    gallery = Photo.objects.filter(car=cars_k)
     ctx = {
         'cars': cars_k,
-        'mileage': mileage,
-        'price': price
+        'gallery': gallery,
     }
     return render(request, 'car_details.html', ctx)

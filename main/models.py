@@ -47,6 +47,12 @@ class Car(models.Model):
         ('Бензин/Газ','Бензин/Газ')
     )
 
+    CURRENCY_CHOICES = (
+        ('€','€'),
+        ('$','$'),
+        ('₴','₴')
+    )
+
     title = models.TextField('Назва', max_length=500)
     image = models.ImageField(upload_to='cars')
     state = models.CharField('Стан', max_length=225, choices=STATE_CHOICES)
@@ -65,6 +71,7 @@ class Car(models.Model):
     mixed_flowrate = models.FloatField('Змішаний розхід')
     detail = models.TextField('Детальніше')
     price = models.DecimalField('Ціна', max_digits=10, decimal_places=0)
+    currency = models.CharField('Ціна', max_length=2,default='€', choices=CURRENCY_CHOICES)
 
     hot = models.BooleanField('Гаряча Пропозиція',
                               default=False,
@@ -101,7 +108,7 @@ class Photo(models.Model):
                               null=True,
                               blank=True,
                               help_text='Зображення буде відображатись на слайдері головної сторінки')
-    Car = models.ForeignKey(Car, on_delete=models.CASCADE)
+    car = models.ForeignKey(Car, on_delete=models.CASCADE)
 
 
 @receiver(post_delete)
