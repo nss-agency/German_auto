@@ -277,6 +277,7 @@ body {
   color: #364d59 !important;
   font-weight: 300;
   font-size: 1rem;
+  overflow: hidden;
 }
 
 ::-moz-selection {
@@ -396,6 +397,13 @@ h1, h2, h3, h4, h5,
 .site-footer .footer-heading {
   font-size: 16px;
   color: #fff;
+}
+.site-footer .footer_social {
+  display: flex;
+}
+.site-footer .ico_footer {
+  font-size: 2rem;
+  margin-right: 12px;
 }
 
 .bg-text-line {
@@ -583,8 +591,26 @@ h1, h2, h3, h4, h5,
   padding: 0;
   font-size: 1.7rem;
 }
+.site-navbar .site-logo .nav_logo {
+  height: 50px;
+}
+@media only screen and (max-width: 600px) {
+  .site-navbar .site-logo .nav_logo {
+    height: 25px;
+  }
+}
 .site-navbar .site-logo a {
   color: #fff;
+}
+@media only screen and (max-width: 1200px) {
+  .site-navbar .site-logo a {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .site-navbar .site-logo a {
+    display: none;
+  }
 }
 @media (max-width: 991.98px) {
   .site-navbar .site-logo {
@@ -619,7 +645,7 @@ h1, h2, h3, h4, h5,
   text-decoration: none !important;
 }
 .site-navbar .site-navigation .site-menu > li > a:hover {
-  color: #007bff;
+  color: #007bff !important;
 }
 .site-navbar .site-navigation .site-menu > li.active > a {
   color: #007bff !important;
@@ -805,7 +831,13 @@ h1, h2, h3, h4, h5,
 .site-mobile-menu .site-nav-wrap li .nav-link.active {
   color: #007bff;
 }
+.site-mobile-menu .site-nav-wrap li .nav-link:hover {
+  color: #007bff !important;
+}
 .site-mobile-menu .site-nav-wrap li.active > a {
+  color: #007bff;
+}
+.site-mobile-menu .site-nav-wrap .nav-hover:hover {
   color: #007bff;
 }
 .site-mobile-menu .site-nav-wrap .arrow-collapse {
@@ -1475,6 +1507,14 @@ h1, h2, h3, h4, h5,
   height: 100vh;
   min-height: 900px;
 }
+.ftco-cover-1 .media-hero {
+  height: 280px;
+}
+@media only screen and (max-width: 500px) {
+  .ftco-cover-1 .media-hero {
+    height: 180px;
+  }
+}
 .ftco-cover-1.innerpage, .ftco-cover-1.innerpage .container > .row {
   height: 90vh;
   min-height: 700px;
@@ -1792,6 +1832,11 @@ h1, h2, h3, h4, h5,
   margin-top: 20px;
 }
 
+@media only screen and (max-width: 360px) {
+  .how-it-works {
+    display: none;
+  }
+}
 .how-it-works .step {
   width: 20%;
   display: inline-block;
@@ -1822,6 +1867,11 @@ h1, h2, h3, h4, h5,
   position: relative;
   margin: 0 auto 10px auto;
 }
+@media only screen and (max-width: 600px) {
+  .how-it-works .step .number {
+    margin: 0 auto 10px auto;
+  }
+}
 .how-it-works .step .number > span {
   position: absolute;
   top: 50%;
@@ -1832,6 +1882,11 @@ h1, h2, h3, h4, h5,
 }
 .how-it-works .step .caption {
   display: block;
+}
+@media only screen and (max-width: 600px) {
+  .how-it-works .step .caption {
+    font-size: 11px;
+  }
 }
 
 .service-1 {

@@ -6,7 +6,8 @@
 
             <div class="col-3 ">
                 <div class="site-logo">
-                    <a href="{% url 'index' %}"><img style="height: 50px;" src="{% static 'images/logo.png' %}" alt="">   German Auto</a>
+                    <img class="nav_logo"  src="{% static 'images/logo.png' %}" alt="">
+                    <a href="{% url 'index' %}">   German Auto</a>
                 </div>
             </div>
 
@@ -23,9 +24,9 @@
                         <ul class="site-menu main-menu js-clone-nav ml-auto ">
                             <li><a href="{% url 'index' %}"
                                    class="nav-link {% if url_name == 'index' %}active{% endif %}">Головна</a></li>
-                            <li><a href="{% url 'about' %}" class="nav-link {% if url_name == 'about' %}active{% endif %} ">Про
+                            <li><a href="{% url 'about' %}" class="nav-link  {% if url_name == 'about' %}active{% endif %} ">Про
                                 Нас</a></li>
-                            <li><a href="{% url 'services' %}" class="nav-link {% if url_name == 'services' %}active{% endif %} ">Послуги</a>
+                            <li><a href="{% url 'services' %}" class="nav-link  {% if url_name == 'services' %}active{% endif %} ">Послуги</a>
                             </li>
                             <li><a href="{% url 'cars' %}" class="nav-link {% if url_name == 'cars' %}active{% endif %}">В
                                 Наявності</a></li>
