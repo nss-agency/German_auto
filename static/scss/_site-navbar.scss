@@ -23,18 +23,23 @@
 
         .nav_logo {
             height: 50px;
-            
-            @media only screen and (max-width: 600px){
-                height: 25px;
+
+            @media only screen and (max-width: 600px) {
+                height: 45px;
             }
         }
 
         a {
             color: $white;
-            @media only screen and (max-width: 1200px){
+
+        }
+
+        .mob-text {
+            @media only screen and (max-width: 1200px) {
                 font-size: 1rem;
             }
-            @media only screen and (max-width: 990px){
+            @media only screen and (max-width: 990px) {
+
                 display: none;
             }
         }
