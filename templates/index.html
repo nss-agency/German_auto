@@ -174,40 +174,40 @@
 
 {% include 'steps.html' %}
 
-<div data-aos="fade-up" data-aos-delay="400" class="site-section section-3"
+<div class="site-section section-3"
      style="background-image: url('{% static 'images/johannes-plenio-2TQwrtZnl08-unsplash.jpg' %}');">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
-                <div class="service-1">
-              <span class="service-1-icon">
-                <span class="flaticon-car"></span>
-              </span>
-                    <div class="service-1-contents">
-                        <h3 style="color: white;">Кількість авто</h3>
-                        <h1 class="index-count" style="color: white;">214</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="service-1">
-              <span class="service-1-icon">
-                <span class="flaticon-traffic"></span>
-              </span>
-                    <div class="service-1-contents">
-                        <h3 style="color: white;">Кількість країн</h3>
-                        <h1 class="index-count" style="color: white;">100</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
+            <div data-aos="fade-up" data-aos-delay="400" class="col-lg-4">
                 <div class="service-1">
               <span class="service-1-icon">
                 <span class="flaticon-valet-1"></span>
               </span>
                     <div class="service-1-contents">
-                        <h3 style="color: white;">Кількість задоволених клієнтів</h3>
-                        <h1 class="index-count" style="color: white;">2000</h1>
+                        <h3 style="color: white;">Загалом авто більше</h3>
+                        <h1 class="index-count" style="color: white;">1000</h1>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400" class="col-lg-4">
+                <div class="service-1">
+              <span class="service-1-icon">
+                <span class="flaticon-traffic"></span>
+              </span>
+                    <div class="service-1-contents">
+                        <h3 style="color: white;">Загалом країн більше</h3>
+                        <h1 class="index-count" style="color: white;">20</h1>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400" class="col-lg-4">
+                <div class="service-1">
+              <span class="service-1-icon">
+                <span class="flaticon-valet"></span>
+              </span>
+                    <div class="service-1-contents">
+                        <h3 style="color: white;">Загалом задоволених клієнтів більше</h3>
+                        <h1 class="index-count" style="color: white;">600</h1>
                     </div>
                 </div>
             </div>
@@ -229,7 +229,7 @@
         $(this).prop('Counter', 0).animate({
             Counter: $(this).text()
         }, {
-            duration: 4500,
+            duration: 3200,
             easing: 'swing',
             step: function (now) {
                 $(this).text(Math.ceil(now).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 "));

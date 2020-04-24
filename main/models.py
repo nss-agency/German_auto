@@ -28,8 +28,10 @@ class Car(models.Model):
         ('Відсутні', 'Відсутні'),
         ('Передні', 'Передні'),
         ('Задні', 'Задні'),
+        ('Задні + Камера', 'Задні + Камера'),
         ('Передні та Задні', 'Передні та Задні'),
-        ('Camera', 'Камера')
+        ('Передні та Задні + Камера', 'Передні та Задні + Камера'),
+        ('Камера', 'Камера')
     )
 
     CATEGORY_CHOICES = (
@@ -44,7 +46,9 @@ class Car(models.Model):
     PATROL_CHOICES = (
         ('Бензин','Бензин'),
         ('Дизель','Дизель'),
-        ('Бензин/Газ','Бензин/Газ')
+        ('Бензин/Газ','Бензин/Газ'),
+        ('Електрика','Електрика'),
+        ('Гібрид','Гібрид')
     )
 
     CURRENCY_CHOICES = (
@@ -60,8 +64,7 @@ class Car(models.Model):
     first_register = models.CharField('Перша реєстрація',max_length=10)
     transmision = models.CharField('Коробка передач', max_length=225, choices=TRANSMISION_CHOICES)
     mileage = models.IntegerField('Пробіг')
-    power = models.IntegerField('Потужність')
-    value = models.IntegerField('Об\'єм')
+    value = models.FloatField('Об\'єм')
     color = models.CharField('Колір', max_length=225)
     salon = models.CharField('Салон', max_length=225, choices=SALON_CHOICES)
     parktronick = models.CharField('Парктронік', max_length=225, choices=PARKTRONICK_CHOICES)

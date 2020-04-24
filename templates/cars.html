@@ -42,7 +42,7 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-6 text-center">
                         <h1 class="text-transparent-gradient font-weight-bold">В Наявності</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>Наша команда професіоналів спеціально для Вас відібрала тільки найкращі пропозиції.</p>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="item-1">
 
-                            <a href="{% url "car_details" car.id %} "><img src="{{ car.image.url }}" alt="{{ car.title }}" class="img-fluid"></a>
+                            <a href="{% url "car_details" car.id %} "><img src="{{ car.image.url }}" alt="{{ car.title }}" class="car-image"></a>
                             <div class="item-1-contents">
                                 <div class="text-center">
                                     <h3><a href=" {% url "car_details" car.id %} ">{{ car.title }}</a></h3>
