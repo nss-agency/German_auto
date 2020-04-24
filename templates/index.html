@@ -132,7 +132,7 @@
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <div class="service-1">
+                <div data-aos="zoom-in" data-aos-delay="400" class="service-1">
               <span class="service-1-icon">
                 <span class="flaticon-car-1"></span>
               </span>
@@ -145,7 +145,7 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="service-1">
+                <div data-aos="zoom-in" data-aos-delay="400" class="service-1">
               <span class="service-1-icon">
                 <span class="flaticon-traffic"></span>
               </span>
@@ -156,7 +156,7 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="service-1">
+                <div data-aos="zoom-in" data-aos-delay="400" class="service-1">
               <span class="service-1-icon">
                 <span class="flaticon-valet"></span>
               </span>
@@ -174,7 +174,8 @@
 
 {% include 'steps.html' %}
 
-<div class="site-section section-3" style="background-image: url('{% static 'images/johannes-plenio-2TQwrtZnl08-unsplash.jpg' %}');">
+<div data-aos="fade-up" data-aos-delay="400" class="site-section section-3"
+     style="background-image: url('{% static 'images/johannes-plenio-2TQwrtZnl08-unsplash.jpg' %}');">
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
@@ -225,16 +226,16 @@
 
 <script>
     $('.index-count').each(function () {
-    $(this).prop('Counter',0).animate({
-        Counter: $(this).text()
-    }, {
-        duration: 1500,
-        easing: 'swing',
-        step: function (now) {
-            $(this).text(Math.ceil(now).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 "));
-        }
+        $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 4500,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 "));
+            }
+        });
     });
-});
 </script>
 </body>
 
