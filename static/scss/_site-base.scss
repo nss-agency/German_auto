@@ -418,19 +418,20 @@ h1, h2, h3, h4, h5,
     border-bottom: 1px solid $gray-200 !important;
 }
 
-
 .text-transparent-gradient {
     background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, rgba(255, 255, 255)),
             to(transparent));
-    background: -o-linear-gradient(left, transparent 0%, rgba(255, 255, 255) 50%,
-            transparent 100%);
-    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255) 50%,
-            transparent 100%);
+    background: -o-linear-gradient(left, transparent 0%, rgba(255, 255, 255) 48%,
+            transparent 133%);
+    background: linear-gradient(162deg, transparent 0%, rgba(255, 255, 255) 48%,
+            transparent 133%);
     background-clip: border-box;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent !important;
+
 }
+
 
 .center {
     margin-left: auto;
