@@ -73,7 +73,7 @@
                 <input class="form-control" oninput=Calculate() type="text" id="auto_price" name="auto_price">
                 <br>
                 <h4>Результат:</h4>
-                <input class="form-control" type="number" id="result">
+                <input disabled class="form-control" type="text" id="result">
             </div>
 
 
@@ -127,23 +127,19 @@
             }
         }
 
-<<<<<<< HEAD
         let date = new Date().getFullYear();
         let step1 = gas_money * (motor_volume / 1000) * (date - year) * 0.5;
         let step2 = auto_price + step1;
         let step3 = step2 * 1.1 * .2;
         let step4 = auto_price * .04;
         let step5 = step1 + (step2 * .1) + step3 + step4;
-=======
-        let date = new Date().getFullYear()
-        let step1 = gas_money * (motor_volume / 1000) * (date - year) * 0.5
-        let step2 = auto_price + step1
-        let step3 = step2 * 1.1 * .2
-        let step4 = auto_price * .04
-        let step5 = step1 + (step2 * .1) + step3 + step4
->>>>>>> 666d394397422fd9a58252c098c2ce24c0fa7fce
 
-        document.getElementById('result').value = Math.round(step5)
+
+        if (isNaN(Math.round(step5))) {
+            document.getElementById('result').value = ' '
+        } else {
+            document.getElementById('result').value = `${Math.round(step5)} €`
+        }
     }
 </script>
 <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
