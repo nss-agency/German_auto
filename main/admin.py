@@ -10,8 +10,8 @@ class PhotoInline(admin.StackedInline):
 
 
 class CarAdmin(admin.ModelAdmin):
-    list_display = ['title', 'category']
-    search_fields = ['category']
+    list_display = ['title', 'category', 'first_register', 'price', 'mileage']
+    search_fields = ['category', 'title']
     inlines = [PhotoInline]
 
     def save_model(self, request, obj, form, change):

@@ -8,19 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
 
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
-    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
     <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'css/aos.css' %}">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'scss/style.css' %}">
 
 </head>
 
@@ -47,7 +43,6 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-6 text-center">
                         <h1 class="text-transparent-gradient font-weight-bold">Про Нас</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
             </div>
@@ -58,10 +53,10 @@
     <div class="site-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2">
-                    <img src="{% static 'images/hero_6.JPG'%}" alt="Image" class="img-fluid">
+                <div data-aos="flip-right" class="col-lg-6 mb-5 mb-lg-0 order-lg-2">
+                    <img src="{% static 'images/hero_6.JPG' %}" alt="Image" class="img-fluid">
                 </div>
-                <div class="col-lg-4 mr-auto">
+                <div data-aos="flip-left" class="col-lg-4 mr-auto">
                     <h2>German Auto</h2>
                     <p>Це компанія що займається доставкою та розмитненням авто з європейських країн, уже більше 5 років
                         досвіду на європейському ринку. Приймаємо ексклюзивні замовлення. Надаємо компетентну
@@ -74,34 +69,34 @@
     </div>
 
 
-        <div class="container">
-             <div class="row justify-content-center text-center">
-        <div class="col-7 text-center mb-5">
-            <h2>Найчастіші питання</h2>
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-7 text-center mb-5">
+                <h2>Найчастіші питання</h2>
+            </div>
         </div>
-    </div>
-            {% for f in faq %}
-                <div class="accordion" id="accordionExample">
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h2 class="text-center mb-0">
-                                <button class=" btn btn-link" type="button" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    {{f.question}}
-                                </button>
-                            </h2>
-                        </div>
+        {% for f in faq %}
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="text-center mb-0">
+                            <button class=" btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                {{ f.question }}
+                            </button>
+                        </h2>
+                    </div>
 
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                             data-parent="#accordionExample">
-                            <div class="card-body">
-                                {{ f.answer }}
-                            </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                         data-parent="#accordionExample">
+                        <div class="card-body">
+                            {{ f.answer }}
                         </div>
                     </div>
+                </div>
             </div>
-            {% endfor %}
-        </div>
+        {% endfor %}
+    </div>
 
 
     {% include 'steps.html' %}
@@ -111,15 +106,8 @@
 </div>
 
 <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-<script src="{% static 'js/popper.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-<script src="{% static 'js/jquery.sticky.js' %}"></script>
-<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
-<script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
-<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-<script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
 <script src="{% static 'js/aos.js' %}"></script>
 
 <script src="{% static 'js/main.js' %}"></script>

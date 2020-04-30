@@ -90,6 +90,7 @@ body {
     color: #364d59 !important;
     font-weight: 300;
     font-size: $font-size-base;
+    overflow: hidden;
 
 }
 
@@ -195,11 +196,11 @@ h1, h2, h3, h4, h5,
 
 
 .site-footer {
-    padding: 4em 0;
+    padding: 1em 0;
     // background: lighten($black, 20%);
     background: $black;
     @include media-breakpoint-up(md) {
-        padding: 8em 0;
+        padding: 2em 0;
     }
 
     .border-top {
@@ -231,6 +232,15 @@ h1, h2, h3, h4, h5,
     .footer-heading {
         font-size: 16px;
         color: $white;
+    }
+
+    .footer_social {
+        display: flex;
+    }
+
+    .ico_footer {
+        font-size: 2rem;
+        margin-right: 12px;
     }
 }
 
@@ -408,19 +418,20 @@ h1, h2, h3, h4, h5,
     border-bottom: 1px solid $gray-200 !important;
 }
 
-
 .text-transparent-gradient {
     background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, rgba(255, 255, 255)),
             to(transparent));
-    background: -o-linear-gradient(left, transparent 0%, rgba(255, 255, 255) 50%,
-            transparent 100%);
-    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255) 50%,
-            transparent 100%);
+    background: -o-linear-gradient(left, transparent 0%, rgba(255, 255, 255) 48%,
+            transparent 133%);
+    background: linear-gradient(162deg, transparent 0%, rgba(255, 255, 255) 48%,
+            transparent 133%);
     background-clip: border-box;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent !important;
+
 }
+
 
 .center {
     margin-left: auto;
@@ -429,3 +440,9 @@ h1, h2, h3, h4, h5,
 }
 
 
+.car-image {
+    width: 100vh;
+    max-width: 100%;
+    height: 250px;
+    object-fit: cover;
+}

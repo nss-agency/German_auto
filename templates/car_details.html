@@ -9,19 +9,17 @@
     <title>Document</title>
 
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
 
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
-    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
     <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'css/aos.css' %}">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'scss/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_car.css' %}">
+
 </head>
 <body>
 <div class="site-wrap" id="home-section">
@@ -34,25 +32,192 @@
         </div>
         <div class="site-mobile-menu-body"></div>
     </div>
-
+</div>
 
 {% include 'nav.html' %}
 
-<img src="{% static 'images/hero_5.JPG' %}" alt="">
+<div class="ftco-blocks-cover-1">
+    <div class="ftco-cover-1 overlay innerpage" style="background-image: url('{{ cars.image.url }}')">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h1 class=" font-weight-bold">Детальніше про : {{ cars.title }} </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <section class="ftco-section ftco-car-details">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="car-details">
+                        <div class="img rounded" style="background-image: url({{ cars.image.url }});"></div>
+                        <div class="text text-center">
+                            <span class="subheading">{{ cars.price }} {{ cars.currency }}</span>
+                            <h2>{{ cars.title }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                * {
+                    box-sizing: border-box;
+                }
+
+                .galley-column {
+                    float: left;
+                    width: 25%;
+                    padding: 10px;
+                }
+
+                /* Style the images inside the grid */
+                .galley-column img {
+                    opacity: 0.8;
+                    cursor: pointer;
+                }
+
+                .galley-column img:hover {
+                    opacity: 1;
+                }
+
+                /* Clear floats after the columns */
+                .galley-row:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+
+                /* The expanding image container */
+                .gallery-container {
+                    position: relative;
+                    display: none;
+                }
+
+                /* Expanding image text */
+                #imgtext {
+                    position: absolute;
+                    bottom: 15px;
+                    left: 15px;
+                    color: white;
+                    font-size: 20px;
+                }
+
+                /* Closable button inside the expanded image */
+                .closebtn {
+                    position: absolute;
+                    top: 10px;
+                    right: 15px;
+                    color: white;
+                    font-size: 35px;
+                    cursor: pointer;
+                }
+            </style>
+
+            <div class="gallery-row">
+                {% for photo in gallery %}
+                    <div class="galley-column">
+                        <img src="{{ photo.image.url }}" alt="car" style="width:100%; height: 11rem; object-fit: cover"
+                             onclick="myFunction(this);">
+                    </div>
+                {% endfor %}
+
+            </div>
+
+            <div class="container">
+                <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                <img id="expandedImg" style="width:100%" alt="">
+                <div id="imgtext"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 pills">
+                    <div class="bd-example bd-example-tabs">
+                        <div class="d-flex justify-content-center">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="pills-description-tab" data-toggle="pill"
+                                       href="#pills-description" role="tab" aria-controls="pills-description"
+                                       aria-expanded="true">Подробиці</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill"
+                                       href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer"
+                                       aria-expanded="true">Детальніше</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-description" role="tabpanel"
+                                 aria-labelledby="pills-description-tab">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <ul class="features">
+                                            <li class="check">Перша Реєстрація:
+                                                <strong>{{ cars.first_register }}p.</strong></li>
+                                            <li class="check">Пробіг: <strong>{{ cars.mileage }} км</strong></li>
+                                            <li class="check">Стан: <strong>{{ cars.state }}</strong></li>
+                                            <li class="check">Коробка Передач: <strong>{{ cars.transmision }}</strong>
+                                            </li>
+                                            <li class="check">Об'єм мотору: <strong>{{ cars.value }} л </strong></li>
+                                            <li class="check">Тип Палива: <strong>{{ cars.patrol }}</strong></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="features">
+                                            <li class="check">Колір: <strong>{{ cars.color }}</strong></li>
+                                            <li class="check">Салон: <strong>{{ cars.salon }}</strong></li>
+                                            <li class="remove">Парктроніки: <strong>{{ cars.parktronick }}</strong></li>
+                                            <li class="check">Категорія: <strong>{{ cars.category }}</strong></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="features">
+                                            <li class="check">Розхід по місту: <strong>{{ cars.sity_flowrate }}</strong>
+                                            </li>
+                                            <li class="check">Розхід по шосе: <strong>{{ cars.trace_flowrate }}</strong>
+                                            </li>
+                                            <li class="check">Змішаний розхід:
+                                                <strong>{{ cars.mixed_flowrate }}</strong></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel"
+                                 aria-labelledby="pills-manufacturer-tab">
+                                {{ cars.detail|safe }}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 {% include 'footer.html' %}
+<script>
+    function myFunction(imgs) {
+        var expandImg = document.getElementById("expandedImg");
+        var imgText = document.getElementById("imgtext");
+        expandImg.src = imgs.src;
+        imgText.innerHTML = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+    }
+</script>
 <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-<script src="{% static 'js/popper.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-<script src="{% static 'js/jquery.sticky.js' %}"></script>
-<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
-<script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
-<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-<script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
 <script src="{% static 'js/aos.js' %}"></script>
 
 <script src="{% static 'js/main.js' %}"></script>
-</body>
 
+</body>
 </html>
+

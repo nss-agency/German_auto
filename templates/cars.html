@@ -8,19 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
 
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
-    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
     <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'css/aos.css' %}">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'scss/style.css' %}">
 
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -46,7 +42,7 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-6 text-center">
                         <h1 class="text-transparent-gradient font-weight-bold">В Наявності</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>Наша команда професіоналів спеціально для Вас відібрала тільки найкращі пропозиції.</p>
                     </div>
                 </div>
             </div>
@@ -60,11 +56,11 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="item-1">
 
-                            <a href="#"><img src="{{ car.image.url }}" alt="{{ car.title }}" class="img-fluid"></a>
+                            <a href="{% url "car_details" car.id %} "><img src="{{ car.image.url }}" alt="{{ car.title }}" class="car-image"></a>
                             <div class="item-1-contents">
                                 <div class="text-center">
-                                    <h3><a href="#">{{ car.title }}</a></h3>
-                                    <div class="rent-price"><span>{{ car.price }} €</span></div>
+                                    <h3><a href=" {% url "car_details" car.id %} ">{{ car.title }}</a></h3>
+                                    <div class="rent-price"><span>{{ car.price}} {{ car.currency }}</span></div>
                                 </div>
                                 <ul class="specs">
                                     <li>
@@ -89,7 +85,7 @@
                                     </li>
                                 </ul>
                                 <div class="d-flex action">
-                                    <a href="contact.html" class="btn btn-primary">Детальніше</a>
+                                    <a href="{% url "car_details" car.id %}" class="btn btn-primary">Детальніше</a>
                                 </div>
                             </div>
                         </div>
@@ -106,18 +102,12 @@
 </div>
 
 <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-<script src="{% static 'js/popper.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-<script src="{% static 'js/jquery.sticky.js' %}"></script>
-<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
-<script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
-<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-<script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
 <script src="{% static 'js/aos.js' %}"></script>
 
 <script src="{% static 'js/main.js' %}"></script>
+
 
 </body>
 
