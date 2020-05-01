@@ -39,7 +39,6 @@ def offer(request):
     return render(request, 'offer.html', ctx)
 
 
-
 def car_details(request, id):
     cars_k = Car.objects.get(pk=id)
     gallery = Photo.objects.filter(car=cars_k)

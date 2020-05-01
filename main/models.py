@@ -44,34 +44,28 @@ class Car(models.Model):
     )
 
     PATROL_CHOICES = (
-        ('Бензин','Бензин'),
-        ('Дизель','Дизель'),
-        ('Бензин/Газ','Бензин/Газ'),
-        ('Електрика','Електрика'),
-        ('Гібрид','Гібрид')
+        ('Бензин', 'Бензин'),
+        ('Дизель', 'Дизель'),
+        ('Бензин/Газ', 'Бензин/Газ'),
+        ('Електрика', 'Електрика'),
+        ('Гібрид', 'Гібрид')
     )
 
     CURRENCY_CHOICES = (
-        ('€','€'),
-        ('$','$'),
-        ('₴','₴')
+        ('€', '€'),
+        ('$', '$'),
+        ('₴', '₴')
     )
 
     title = models.TextField('Назва', max_length=500)
     image = models.ImageField(upload_to='cars')
     state = models.CharField('Стан', max_length=225, choices=STATE_CHOICES)
     patrol = models.CharField('Тип Палива', max_length=225, choices=PATROL_CHOICES)
-    first_register = models.CharField('Перша реєстрація',max_length=10)
+    first_register = models.CharField('Перша реєстрація', max_length=10)
     transmision = models.CharField('Коробка передач', max_length=225, choices=TRANSMISION_CHOICES)
     mileage = models.IntegerField('Пробіг')
-<<<<<<< HEAD
-    power = models.IntegerField('Потужність')
-    gas_type = models.CharField('Тип палива', max_length=225, choices=(
-    ('Бензин', 'Бензин'), ('Дизель', 'Дизель'), ('Електрика', 'Електрика'), ('Бензин/Газ', 'Бензин/Газ')))
-    value = models.IntegerField('Об\'єм')
-=======
+    hp = models.PositiveIntegerField('Кількість кінських сил')
     value = models.FloatField('Об\'єм')
->>>>>>> ef1381fbb3771d3deab1c976a32077647300344d
     color = models.CharField('Колір', max_length=225)
     salon = models.CharField('Салон', max_length=225, choices=SALON_CHOICES)
     parktronick = models.CharField('Парктронік', max_length=225, choices=PARKTRONICK_CHOICES)
@@ -81,7 +75,7 @@ class Car(models.Model):
     mixed_flowrate = models.FloatField('Змішаний розхід')
     detail = models.TextField('Детальніше')
     price = models.DecimalField('Ціна', max_digits=10, decimal_places=0)
-    currency = models.CharField('Ціна', max_length=2,default='€', choices=CURRENCY_CHOICES)
+    currency = models.CharField('Ціна', max_length=2, default='€', choices=CURRENCY_CHOICES)
 
     hot = models.BooleanField('Гаряча Пропозиція',
                               default=False,
@@ -127,4 +121,3 @@ def submission_delete(sender, instance, **kwargs):
         instance.image.delete(False)
     except AttributeError:
         pass
-
