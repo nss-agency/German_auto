@@ -1,8 +1,27 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from main.models import Car, Faq, Photo
+from django.core.mail import send_mail
+from .decorators import check_recaptcha
 
 
 # Create your views here.
+
+def send_contact(request):
+    fname = request.POST.get('first_name', '')
+    lname = request.POST.get('last_name', '')
+    subject = 'Повідомлення з веб сайту'
+    message = request.POST.get('message', '')
+    from_email = request.POST.get('email', '')
+    whatsapp = request.POST.get('tel', '')
+    messages = 'Ім\'я та Прізвище: {} {} \n' \
+               'Номер Телефону: {}\n' \
+               'Від кого(E-mail): {}\n' \
+               'Повідомлення: \n{}\n\n\n\n' \
+               'Надіслано з ' \
+               '<a href="https://german-auto.in.ua/">german-auto.in.ua</a>'.format(fname, lname, whatsapp, from_email,
+                                                                                   message)
+    send_mail(subject, messages, 'noreply@german-auto.in.ua', ['henow32444@reqaxv.com'], fail_silently=False)
 
 
 def index(request):
@@ -24,8 +43,16 @@ def cars(request):
     return render(request, 'cars.html', ctx)
 
 
+@check_recaptcha
 def contact(request):
-    ctx = {}
+    ctx = {'success': False,
+           'fail': False}
+    if request.method == 'POST':
+        if request.recaptcha_is_valid:
+            send_contact(request)
+            ctx['success'] = True
+        else:
+            ctx['fail'] = True
     return render(request, 'contact.html', ctx)
 
 

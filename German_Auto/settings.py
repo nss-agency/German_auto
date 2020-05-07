@@ -24,7 +24,15 @@ SECRET_KEY = '273bhz-%_@c279luevr*_2*tuub#fr^0y+&qz!m0#f6t@xxsw1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+if not DEBUG:
+    PREPEND_WWW = False
+    BASE_URL = "https://german-auto.in.ua"
+
+if DEBUG:
+    ALLOWED_HOSTS = []
+else:
+    ALLOWED_HOSTS = ['https://german-auto.in.ua', 'https://www.german-auto.in.ua', 'www.german-auto.in.ua',
+                     'german-auto.in.ua']
 
 # Application definition
 
@@ -47,6 +55,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if not DEBUG:
+    CSRF_COOKIE_SECURE = True
+    X_FRAME_OPTIONS = "DENY"
+    SESSION_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
 
 ROOT_URLCONF = 'German_Auto.urls'
 
@@ -117,10 +133,25 @@ USE_THOUSAND_SEPARATOR = True
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+if not DEBUG:
+    STATIC_ROOT = '/home2/germanau/public_html/static'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+if not DEBUG:
+    MEDIA_ROOT = '/home2/germanau/public_html/media'
+else:
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+GOOGLE_RECAPTCHA_SECRET_KEY = '******'
+
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'euvip01.twinservers.net'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'noreply@german-auto.in.ua'
+EMAIL_HOST_PASSWORD = '****'

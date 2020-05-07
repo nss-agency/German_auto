@@ -58,7 +58,7 @@ class Car(models.Model):
     )
 
     title = models.TextField('Назва', max_length=500)
-    image = models.ImageField(upload_to='cars')
+    image = models.ImageField('Зображення',upload_to='cars')
     state = models.CharField('Стан', max_length=225, choices=STATE_CHOICES)
     patrol = models.CharField('Тип Палива', max_length=225, choices=PATROL_CHOICES)
     first_register = models.CharField('Перша реєстрація', max_length=10)
