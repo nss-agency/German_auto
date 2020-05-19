@@ -4,6 +4,13 @@ html {
   overflow-x: hidden;
 }
 
+b, strong {
+  font-weight: bold !important;
+}
+
+@font-face {
+  font-display: swap;
+}
 .font-size-10 {
   font-size: 10px;
 }

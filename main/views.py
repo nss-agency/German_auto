@@ -43,6 +43,7 @@ def cars(request):
     return render(request, 'cars.html', ctx)
 
 
+
 @check_recaptcha
 def contact(request):
     ctx = {'success': False,

@@ -148,10 +148,10 @@ else:
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-GOOGLE_RECAPTCHA_SECRET_KEY = '******'
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LdMv_MUAAAAAD8EZHCdNyhRrSrCszObQ79c3w_6'
 
 EMAIL_USE_SSL = True
 EMAIL_HOST = 'euvip01.twinservers.net'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'noreply@german-auto.in.ua'
-EMAIL_HOST_PASSWORD = '****'
+EMAIL_HOST_PASSWORD = '1NfIBZ(FMxsn'
